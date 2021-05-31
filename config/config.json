@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "ffinvestimentos",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "b168bf33e7edb6",
+    "password": "e9cbb294",
+    "database": "heroku_7754cd35ee4372a",
+    "host": "us-cdbr-east-04.cleardb.com",
+    "dialect": "mysql"
+  },
+  "urlRoot": "https://ffinvestimentos.herokuapp.com/"
+}
