@@ -19,6 +19,7 @@
     "expo": "~41.0.1",
     "expo-status-bar": "~1.0.4",
     "express": "^4.17.1",
+    "firebase": "^8.6.3",
     "mysql2": "^2.2.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
