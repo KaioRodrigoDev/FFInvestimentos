@@ -106,7 +106,7 @@ export default function Home({navigation}) {
 
     async function sendForm(){
       
-    
+      console.log(json)
     //Envio do formulário de login
         let response=await fetch(`${config.urlRoot}login`,{
             method: 'POST',
@@ -120,7 +120,7 @@ export default function Home({navigation}) {
             })
         });
         let json=await response.json();
-
+        
         
         
         if(json == 'error'){
