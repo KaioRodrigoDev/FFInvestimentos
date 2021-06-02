@@ -51,6 +51,8 @@ const [response,setResponse] = useState(null);
   }
 
   function ourin(){
+    
+    
     Linking.openURL('https://br.tradingview.com/chart/?symbol=XAUUSD')
   }
   
@@ -123,19 +125,13 @@ const [response,setResponse] = useState(null);
               bottom:'2%'}}>
               
             <Text style={{color:'#FFF',top:7,textAlign:'center',}}>R$</Text>
-            <Text style={{color:'#FFF',fontSize:23,padding:5,fontFamily: 'monte-serrat2'}}> {Globais.maskedvalorInvestido}</Text>
+            <Text style={{color:'#ffd730',fontSize:23,padding:5,fontFamily: 'monte-serrat2'}}> {Globais.maskedvalorInvestido}</Text>
           </View>
 
-         <Text style={{color:'#FFF',fontSize:13,textAlign:'center',paddingTop:10,fontFamily: 'monte-serrat2'}}>BÔNUS MENSAL</Text>
+         <Text style={{color:'#FFF',fontSize:13,textAlign:'center',paddingTop:10,fontFamily: 'monte-serrat2'}}>RENDIMENTO MENSAL</Text>
          <View style={styles.invest}>
             <Text style={{color:'#FFF',top:7,textAlign:'center'}}>R$</Text>
            <Text style={{color:'#FFF',fontSize:23,padding:5,fontFamily: 'monte-serrat2'}}> {Globais.maskedbonusM} </Text>
-         </View>
-
-          <Text style={{color:'#FFF',fontSize:13,textAlign:'center',paddingTop:10,fontFamily: 'monte-serrat2'}}>BÔNUS ATÉ O FINAL DO CONTRATO</Text>
-         <View style={styles.invest}>
-            <Text style={{color:'#FFF',top:7}}>R$</Text>
-            <Text style={{color:'#FFF',fontSize:23,padding:5,fontFamily: 'monte-serrat2'}}> {Globais.maskedbonusT}</Text>
          </View>
 
 

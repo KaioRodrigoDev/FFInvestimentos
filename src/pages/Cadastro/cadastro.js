@@ -79,7 +79,7 @@ export default function Cadastro({navigation}) {
                 email:email,
                 confsenha:confsenha,
                 cpf:unmaskcpf,
-                ativo:'Ativo',
+                ativo:'Sim',
                 bonusI:0
             })
             
@@ -134,8 +134,8 @@ export default function Cadastro({navigation}) {
           />
 
           <TextInputMask
-            type={'cnpj'}
-            placeholder={'Digite o CNPJ ou CPF'}
+            type={'cpf'}
+            placeholder={'Digite o CPF'}
             style={styles.input}
             keyboardType='numeric'
             value={cpf}

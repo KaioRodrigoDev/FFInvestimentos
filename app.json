@@ -17,13 +17,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.AssetClub.FFinvestimentos",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#121212"
-      }
+        "backgroundColor": "#202A44"
+      },
+      "package": "com.AssetClub.FFinvestimentos",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"

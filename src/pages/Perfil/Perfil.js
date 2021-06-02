@@ -12,9 +12,14 @@ import { useState } from 'react/cjs/react.development';
 
 export default function Perfil({navigation}){
 
+  var valor = 'Inventidor'
+    if (Globais.nome === 'Felipe'){
+      valor = 'CEO'
+    }
     async function cadastro(){
-      if (Globais.cpf == '1') {
+      if (Globais.cpf == '153') {
         navigation.navigate('selectpage')
+        
       }
       
     }
@@ -61,7 +66,7 @@ export default function Perfil({navigation}){
           <View style={styles.profilleIcon}>
             <FontAwesome color='#E1E7E4' name='user-circle' size={70} />
             <Text style={{fontSize:25,color:'#E1E7E4',fontFamily: 'monte-serrat3'}}> {Globais.nome} </Text>
-            <Text style={{fontSize:15,color:'#E1E7E4',fontFamily: 'monte-serrat3'}}>Investidor</Text>
+            <Text style={{fontSize:15,color:'#E1E7E4',fontFamily: 'monte-serrat3'}}>{valor}</Text>
           </View>
         
           

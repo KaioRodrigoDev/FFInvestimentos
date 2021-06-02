@@ -52,7 +52,7 @@ export default function trocasenha({navigation}){
           navigation.navigate('Sobre')
          }
          else{
-          Alert.alert("Error", "Verifique a senha");
+          Alert.alert("Erro", "Verifique a senha");
           
          }
      }
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     },
     input:{
         margin:5,
-        padding:5,
+        padding:10,
         borderRadius:10,
         backgroundColor:'#FFF',
         

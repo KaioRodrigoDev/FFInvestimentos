@@ -3,12 +3,13 @@ import { StatusBar } from 'expo-status-bar';
 import React, {useState, useEffect, Component} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { StyleSheet, Text, View,KeyboardAvoidingView,ImageBackground,TextInput,
-   TouchableOpacity, Animated, Keyboard, BackHandler,Alert , time } from 'react-native';
+   TouchableOpacity, Animated, Keyboard,Linking, BackHandler,Alert , time } from 'react-native';
 import * as Animatable from 'react-native-animatable'
 const bgimage = '../../assets/gold.png';
 import config from '../../../config/config.json'
 const acc = false
 import Globais from '../../../Globais'
+import { AntDesign, Entypo, Feather, FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 
 export default function Home({navigation}) {
   const [offset] = useState(new Animated.ValueXY({x:0,y:95}));
@@ -93,7 +94,13 @@ export default function Home({navigation}) {
       ]).start();
     }
 
+    function inst(){
+      Linking.openURL('https://www.instagram.com/felipesilvaa.ff/')
+    }
 
+    function whats(){
+      Linking.openURL('https://api.whatsapp.com/send?phone=5583991020302&text=Ol%C3%A1%2C%20tenho%20interesse%20em%20saber%20um%20pouco%20mais%20sobre%20a%20FFinvestimentos.')
+    }
 
     
 
@@ -151,8 +158,8 @@ export default function Home({navigation}) {
         const past2 = new Date(Globais.dataInicio);
         const diff2 = Math.abs(  past2.getTime()- now.getTime());
         const rest = Math.ceil(diff2 / (1000 * 60 * 60 * 24 * 30 ));
-        Globais.bonusM = (Globais.valorInvestido*(Globais.bonusP/100))*rest
-        Globais.bonusT = Globais.bonusM * days
+        Globais.bonusM = (Globais.valorInvestido*(Globais.bonusP/100))
+        Globais.bonusT = Globais.bonusM * rest
         function numberToReal(numero) {
           var numero = numero.toFixed(2).split('.');
           numero[0] =  numero[0].split(/(?=(?:...)*$)/).join('.');
@@ -237,14 +244,43 @@ export default function Home({navigation}) {
             <Text style={{color:'#FFF'}}>Esqueceu a senha ?</Text>
           
         </TouchableOpacity>
-        <Text
-        style={{color:'#DDD',top:'30%',fontSize:10}}
-        >© 2021 FFinvestimentos</Text>
 
+        <View style={{flexDirection:'row',paddingTop:10}}>
+
+        
+        <TouchableOpacity
+        onPress={()=>whats()}
+        >
+          <FontAwesome
+          size={30}
+          color={'#FFF'}
+          name={'whatsapp'}
+          />
+
+        </TouchableOpacity>
+
+        <TouchableOpacity
+        style={{paddingLeft:10}}
+        onPress={()=>inst()}
+        >
+          <AntDesign
+          size={30}
+          color={'#FFF'}
+          name={'instagram'}
+          />
+
+        </TouchableOpacity>
+
+        </View>
+
+        <Text
+        style={{color:'#DDD',top:'57%',fontSize:10}}
+        >© 2021 FFinvestimentos</Text>
         </Animated.View>
 
         
     </KeyboardAvoidingView>
+
     </ImageBackground>
     
   );
@@ -253,16 +289,17 @@ export default function Home({navigation}) {
 const styles = StyleSheet.create({
   background: {
     flex:1,
+    backgroundColor:'#12121250',
     alignItems:'center',
     justifyContent:'center'
   },
   containerLogo:{
-    flex:1,
+    height:'38%',
     justifyContent:'center',
 
   },
   container:{
-    flex:1,
+    flex:1.1,
     alignItems:'center',
     width:'90%',
     paddingBottom:50,

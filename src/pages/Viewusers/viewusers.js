@@ -110,8 +110,8 @@ async function sendForm3(id){
       return(
         <View style={styles.item}>
           <View style={{flex:1}}>
-            <Text style={{color:'#FFF',fontSize:20}}>{nome} </Text>
-            <Text style={{color:'#FFF',fontSize:16}}>CPF: {cpf}</Text>
+            <Text style={{color:'#FFF',fontSize:20,fontFamily:'monte-serrat'}}>{nome} </Text>
+            <Text style={{color:'#FFF',fontSize:16,fontFamily:'monte-serrat'}}>CPF: {cpf}</Text>
           </View>
           
           <View style={{justifyContent:'center',flexDirection:'row'}}>
