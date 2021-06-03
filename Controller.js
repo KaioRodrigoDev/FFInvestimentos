@@ -1,10 +1,10 @@
 const express=require('express');
 const cors=require('cors');
-const bodyParser=require('body-parser');
+const bodyParser = require('body-parser')
 const models=require('./models');
 const app=express();
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 let user =models.User;
 let dados = models.Dados;
@@ -20,12 +20,12 @@ app.get('/read', async (req,res)=>{ //VER TODOS
 });
 
 app.post('/login',async (req,res)=>{ //FAZER LOGIN
-
+    console.log('json')
     let response=await user.findOne({
         where:{name:req.body.name, password: req.body.password}
         
     });
-
+    console.log(response)
     //VOU COLOCAR ELE RECEBENDO OS DADOS AQUI DO USUARIO PQ EU NAO SEI MANDAR RESPONSE2 COM O RESPONSE
     //eu acho que consegui colocando mais uma linha de send
     
@@ -53,7 +53,7 @@ app.post('/login',async (req,res)=>{ //FAZER LOGIN
 
 
 
-app.post('/lostacc',async (req,res)=>{ //Recuperar conta 
+app.post('/lostacc', (req,res)=>{ //Recuperar conta 
     console.log(req.body)
     let response=await user.findOne({
         where:{name:req.body.name, cpf: req.body.cpf}

@@ -1,7 +1,7 @@
 
 import { StatusBar } from 'expo-status-bar';
 import React, {useState, useEffect, Component} from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage'
+import {AsyncStorage} from '@react-native-async-storage/async-storage'
 import { StyleSheet, Text, View,KeyboardAvoidingView,ImageBackground,TextInput,
    TouchableOpacity, Animated, Keyboard,Linking, BackHandler,Alert , time } from 'react-native';
 import * as Animatable from 'react-native-animatable'
@@ -106,13 +106,14 @@ export default function Home({navigation}) {
 
     async function sendForm(){
       
-      console.log(json)
     //Envio do formulário de login
-        let response=await fetch(`${config.urlRoot}login`,{
+    
+    let response=await fetch(`${config.urlRoot}login`,{
             method: 'POST',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json'
+                
             },
             body: JSON.stringify({
                 name: user,
@@ -135,6 +136,7 @@ export default function Home({navigation}) {
       } 
       
       else{
+        console.log(json)
         await AsyncStorage.setItem('userData', JSON.stringify(json));
         let resData=await AsyncStorage.getItem('userData');
         navigation.navigate('Sobre')
