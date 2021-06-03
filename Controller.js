@@ -53,7 +53,7 @@ app.post('/login',async (req,res)=>{ //FAZER LOGIN
 
 
 
-app.post('/lostacc', (req,res)=>{ //Recuperar conta 
+app.post('/lostacc',async (req,res)=>{ //Recuperar conta 
     console.log(req.body)
     let response=await user.findOne({
         where:{name:req.body.name, cpf: req.body.cpf}

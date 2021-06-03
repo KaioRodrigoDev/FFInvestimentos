@@ -1,7 +1,11 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "node Controller.js"
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
   },
   "dependencies": {
     "@expo/vector-icons": "^12.0.5",
