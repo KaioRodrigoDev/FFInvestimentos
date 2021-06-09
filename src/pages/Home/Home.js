@@ -1,9 +1,8 @@
 
 import { StatusBar } from 'expo-status-bar';
 import React, {useState, useEffect, Component} from 'react';
-import {AsyncStorage} from '@react-native-async-storage/async-storage'
 import { StyleSheet, Text, View,KeyboardAvoidingView,ImageBackground,TextInput,
-   TouchableOpacity, Animated, Keyboard,Linking, BackHandler,Alert , time } from 'react-native';
+   TouchableOpacity, Animated, AsyncStorage, Keyboard,Linking, BackHandler,Alert , time } from 'react-native';
 import * as Animatable from 'react-native-animatable'
 const bgimage = '../../assets/gold.png';
 import config from '../../../config/config.json'
@@ -107,8 +106,10 @@ export default function Home({navigation}) {
     async function sendForm(){
       
     //Envio do formulário de login
+
+    Alert.alert("Ola", "Devido a uma grande demanda, pode haver um pequeno atraso ao logar !");
     
-    let response=await fetch(`${config.urlRoot}login`,{
+      let response=await fetch(`${config.urlRoot}login`,{
             method: 'POST',
             headers: {
                 Accept: 'application/json',
