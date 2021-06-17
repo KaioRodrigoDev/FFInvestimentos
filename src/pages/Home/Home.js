@@ -98,7 +98,7 @@ export default function Home({navigation}) {
     }
 
     function whats(){
-      Linking.openURL('https://api.whatsapp.com/send?phone=5583991020302&text=Ol%C3%A1%2C%20tenho%20interesse%20em%20saber%20um%20pouco%20mais%20sobre%20a%20FFinvestimentos.')
+      Linking.openURL('https://api.whatsapp.com/send?phone=5583991020302')
     }
 
     
