@@ -128,14 +128,14 @@ export default function Cadastro({navigation}) {
           <View>
             <Text style={{color:'#FFF', alignSelf:'center'}}>{msg}</Text>
           <TextInput
-          placeholder={'Nome e Sobrenome'}
+          placeholder={'Nome'}
           style={styles.input}
           onChangeText={text=>setNome(text)}
           />
 
           <TextInputMask
             type={'cpf'}
-            placeholder={'Digite o CPF'}
+            placeholder={'CPF'}
             style={styles.input}
             keyboardType='numeric'
             value={cpf}
@@ -220,7 +220,7 @@ export default function Cadastro({navigation}) {
 
           <TextInputMask
             type={'datetime'}
-            placeholder={'Termino do Contrato'}
+            placeholder={'Fim do Contrato'}
             style={styles.input}
             options={{
               format: 'DD/MM/YYYY'

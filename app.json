@@ -18,7 +18,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.AssetClub.FFinvestimentos",
+      "bundleIdentifier": "com.AssetClub.FFi",
       "buildNumber": "1.0.0"
     },
     "android": {
@@ -26,7 +26,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#202A44"
       },
-      "package": "com.AssetClub.FFinvestimentos",
+      "package": "com.AssetClub.FFi",
       "versionCode": 1
     },
     "web": {

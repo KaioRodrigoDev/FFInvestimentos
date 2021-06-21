@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import {View,Text,StyleSheet, ImageBackground,Image,KeyboardAvoidingView , TouchableOpacity} from 'react-native';
+import {View,Text,StyleSheet, ImageBackground,Image,KeyboardAvoidingView , TouchableOpacity,Alert} from 'react-native';
 import { Entypo, Feather, FontAwesome } from '@expo/vector-icons';
 import config from '../../../config/config.json'
 const bgimage = '../../assets/gold01.jpg';
@@ -12,7 +12,7 @@ import { useState } from 'react/cjs/react.development';
 
 export default function Perfil({navigation}){
 
-  var valor = 'Inventidor'
+  var valor = 'Cliente'
     if (Globais.nome === 'Felipe'){
       valor = 'CEO'
     }
@@ -20,6 +20,10 @@ export default function Perfil({navigation}){
       if (Globais.cpf == '153') {
         navigation.navigate('selectpage')
         
+      }
+      else{
+        
+    Alert.alert("Área Restrita", "Esta é uma área restrita, permitida apenas para administradores!");
       }
       
     }

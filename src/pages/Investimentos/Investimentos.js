@@ -160,8 +160,8 @@ const [response,setResponse] = useState(null);
            <TouchableOpacity
            onPress={()=>ourin()} 
            >
-            <Text style={{color:'#FFF', textAlign:'center',justifyContent:'center'}}>XAUUSD - Gráfico e Preço do Ouro</Text>
-            <Text style={{color:'#FFF', textAlign:'center',justifyContent:'center'}}>TradingView</Text>
+            <Text style={{color:'#0000FF', textAlign:'center',justifyContent:'center'}}>XAUUSD - Gráfico e Preço do Ouro</Text>
+            <Text style={{color:'#0000FF', textAlign:'center',justifyContent:'center'}}>TradingView</Text>
             
             </TouchableOpacity>
            

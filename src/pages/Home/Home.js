@@ -107,7 +107,7 @@ export default function Home({navigation}) {
       
     //Envio do formulário de login
 
-    Alert.alert("Ola", "Devido a uma grande demanda, pode haver um pequeno atraso ao logar !");
+    Alert.alert("Olá!", "Estamos carregando os dados do seu contrato.");
     
       let response=await fetch(`${config.urlRoot}login`,{
             method: 'POST',
@@ -244,7 +244,7 @@ export default function Home({navigation}) {
         onPress={()=> navigation.navigate('lostAccount')}
         >
           
-            <Text style={{color:'#FFF'}}>Esqueceu a senha ?</Text>
+            <Text style={{color:'#FFF'}}>Esqueceu a senha?</Text>
           
         </TouchableOpacity>
 
