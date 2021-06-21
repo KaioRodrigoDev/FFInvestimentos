@@ -29,6 +29,7 @@ export default function Cadastro({navigation}) {
     const [ativo,setAtivo] = useState(null);
     const [num,setNum] = useState(null);
     
+    const masknum = useRef(null);
     const cpfRef=useRef(null);
     const dinvest=useRef(null);
     const dinicio=useRef(null);
@@ -55,6 +56,9 @@ export default function Cadastro({navigation}) {
     //Envio do formulário
     async function sendForm()
     {
+      const unmasknum = masknum?.current.getRawValue();
+      console.log('numeroooooooooooooooooooooooooooooo')
+      console.log(unmasknum);
       const unmaskcpf = cpfRef?.current.getRawValue();
       const unmaskdinvest = dinvest?.current.getRawValue();
       const unmaskdinicio = dinicio?.current.getRawValue();
@@ -62,12 +66,14 @@ export default function Cadastro({navigation}) {
       
 
         let response=await fetch(config.urlRoot+'cadastro',{
+          
             method: 'POST',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
+
                 userId: user,
                 contrato: contrato,
                 nome: nome,
@@ -80,7 +86,9 @@ export default function Cadastro({navigation}) {
                 confsenha:confsenha,
                 cpf:unmaskcpf,
                 ativo:'Sim',
-                bonusI:0
+                bonusI:0,
+                numero:123456,
+                
             })
             
         });
@@ -105,7 +113,7 @@ export default function Cadastro({navigation}) {
           <Feather
             name='arrow-left'
             style={{width:'100%',
-            right:10,
+            right:'4.5%',
             textAlign:'right',
             marginTop:'8.5%',
             position:'absolute',}}
@@ -148,7 +156,7 @@ export default function Cadastro({navigation}) {
           
         <TextInputMask
             type={'cel-phone'}
-            placeholder={'Numero para contato'}
+            placeholder={'Whatsapp'}
             style={styles.input}
             options={{
               maskType:'BRL' ,
@@ -157,6 +165,7 @@ export default function Cadastro({navigation}) {
             }} 
             value={num}
             onChangeText={text=>setNum(text)}
+            ref={masknum}
           />
 
         <TextInput

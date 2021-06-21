@@ -114,7 +114,7 @@ const [response,setResponse] = useState(null);
       <Text style={{color:'#ffd730',marginTop:'7%',textAlign:'center',fontSize:20,fontFamily: 'monte-serrat'}}>CONTA PRINCIPAL</Text>
       <View style={styles.investimento} >
         
-        <Text style={{color:'#ffd730',fontSize:15,textAlign:'center',fontFamily: 'monte-serrat2'}}>MEU INVESTIMENTO</Text>  
+        <Text style={{color:'#ffd730',bottom:5,fontSize:15,textAlign:'center',fontFamily: 'monte-serrat2'}}>MEU INVESTIMENTO</Text>  
           <View style={{
             backgroundColor:'#12121299',
               flexDirection:'row',
@@ -128,7 +128,7 @@ const [response,setResponse] = useState(null);
             <Text style={{color:'#ffd730',fontSize:23,padding:5,fontFamily: 'monte-serrat2'}}> {Globais.maskedvalorInvestido}</Text>
           </View>
 
-         <Text style={{color:'#FFF',fontSize:13,textAlign:'center',paddingTop:10,fontFamily: 'monte-serrat2'}}>RENDIMENTO MENSAL</Text>
+         <Text style={{color:'#FFF',bottom:5,fontSize:13,textAlign:'center',paddingTop:10,fontFamily: 'monte-serrat2'}}>RENDIMENTO MENSAL</Text>
          <View style={styles.invest}>
             <Text style={{color:'#FFF',top:7,textAlign:'center'}}>R$</Text>
            <Text style={{color:'#FFF',fontSize:23,padding:5,fontFamily: 'monte-serrat2'}}> {Globais.maskedbonusM} </Text>
@@ -160,8 +160,8 @@ const [response,setResponse] = useState(null);
            <TouchableOpacity
            onPress={()=>ourin()} 
            >
-            <Text style={{color:'#0000FF', textAlign:'center',justifyContent:'center'}}>XAUUSD - Gráfico e Preço do Ouro</Text>
-            <Text style={{color:'#0000FF', textAlign:'center',justifyContent:'center'}}>TradingView</Text>
+            <Text style={{color:'#FFF', textAlign:'center',justifyContent:'center'}}>XAUUSD - Gráfico e Preço do Ouro</Text>
+            <Text style={{color:'#FFF', textAlign:'center',justifyContent:'center'}}>TradingView</Text>
             
             </TouchableOpacity>
            

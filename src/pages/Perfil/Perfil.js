@@ -50,7 +50,7 @@ export default function Perfil({navigation}){
           color={'#FFF'}
           onPress={()=>navigation.navigate('Login')}
             style={{
-            right:10,
+            right:'4.5%',
             marginTop:'7.5%',
             textAlign:'right',
             position:'absolute',

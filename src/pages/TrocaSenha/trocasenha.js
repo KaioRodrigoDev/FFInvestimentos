@@ -6,7 +6,7 @@ import { Entypo, Feather, FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import config from '../../../config/config.json'
 
 const bgimage = '../../assets/gold01.jpg';
-import ffinvest from '../../assets/FF400.png'
+import ffinvest from '../../assets/ffimg.png'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Globais from '../../../Globais';
@@ -79,6 +79,7 @@ export default function trocasenha({navigation}){
           <Feather
             name='arrow-left'
             style={{width:'100%',
+            right:'4.5%',
             textAlign:'right',
             marginTop:'8.5%',
             position:'absolute',}}
@@ -95,19 +96,19 @@ export default function trocasenha({navigation}){
           <View>
             <Text style={{color:'#FFF', alignSelf:'center'}}>{msg}</Text>
           <TextInput
-          placeholder={'Senha antiga'}
+          placeholder={'Senha atual'}
           style={styles.input}
           onChangeText={text=>setSenhaAntiga(text)}
           />
 
         <TextInput
-          placeholder={'Nova Senha'}
+          placeholder={'Nova senha'}
           style={styles.input}
           onChangeText={text=>setNovaSenha(text)}
           />
         
         <TextInput
-          placeholder={'Confirmar Nova Senha'}
+          placeholder={'Confirmar senha'}
           style={styles.input}
           onChangeText={text=>setConfNovaSenha(text)}
           />
@@ -132,13 +133,17 @@ export default function trocasenha({navigation}){
 }
 const styles = StyleSheet.create({
   ffimg:{
-    marginTop:25,
+    marginLeft:10,
+    maxWidth:'8%',
+    maxHeight:'8%',
+    
+    marginTop:'8.5%',
     marginBottom:7,
     backgroundColor:'#121212',
-    paddingTop:Platform.OS === "ios" ? '9%' : '8%',
+    paddingTop:'9%',
     marginLeft:10,
-    height:Platform.OS === "ios" ? 40 : 30,
-    width:Platform.OS === "ios" ? 210 : 155,
+    height:Platform.OS === "ios" ? 41 : 31,
+    width:Platform.OS === "ios" ? '46%' : '46.0%',
   },
   bgimage:{
     flex:1,

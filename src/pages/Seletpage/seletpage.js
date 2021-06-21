@@ -59,7 +59,7 @@ export default function Perfil({navigation}){
             <Feather
             name='arrow-left'
             style={{width:'100%',
-            right:10,
+            right:'4.5%',
             textAlign:'right',
             marginTop:'8.5%',
             position:'absolute',}}

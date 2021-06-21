@@ -17,6 +17,7 @@ class Globais{
     static maskedbonusT=''
     static bonusI=''
     static dados=''
+    static num=''
 }
 
 
