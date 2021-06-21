@@ -29,7 +29,6 @@ export default function Cadastro({navigation}) {
     const [ativo,setAtivo] = useState(null);
     const [num,setNum] = useState(null);
     
-    const masknum = useRef(null);
     const cpfRef=useRef(null);
     const dinvest=useRef(null);
     const dinicio=useRef(null);
@@ -56,9 +55,6 @@ export default function Cadastro({navigation}) {
     //Envio do formulário
     async function sendForm()
     {
-      const unmasknum = masknum?.current.getRawValue();
-      console.log('numeroooooooooooooooooooooooooooooo')
-      console.log(unmasknum);
       const unmaskcpf = cpfRef?.current.getRawValue();
       const unmaskdinvest = dinvest?.current.getRawValue();
       const unmaskdinicio = dinicio?.current.getRawValue();
@@ -87,7 +83,6 @@ export default function Cadastro({navigation}) {
                 cpf:unmaskcpf,
                 ativo:'Sim',
                 bonusI:0,
-                numero:123456,
                 
             })
             
@@ -165,7 +160,6 @@ export default function Cadastro({navigation}) {
             }} 
             value={num}
             onChangeText={text=>setNum(text)}
-            ref={masknum}
           />
 
         <TextInput
