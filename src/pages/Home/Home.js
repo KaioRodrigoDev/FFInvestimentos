@@ -132,7 +132,7 @@ export default function Home({navigation}) {
           setTimeout ( ()=> {
             setMsg('')
 
-          },3000 )
+          },30000 )
           
       } 
       
@@ -219,7 +219,7 @@ export default function Home({navigation}) {
         <Text style={{color:'#FFF'}}>{msg}</Text>
         <TextInput
         style={styles.input}
-        placeholder="Email"
+        placeholder="Usuário"
         autoCorrect={false}
         onChangeText={text => setUser(text)}
         />
