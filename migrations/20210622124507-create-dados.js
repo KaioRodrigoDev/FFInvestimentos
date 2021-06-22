@@ -38,6 +38,9 @@ module.exports = {
       bonusP: {
         type: Sequelize.INTEGER
       },
+      bonusI: {
+        type: Sequelize.INTEGER
+      },
       Email: {
         type: Sequelize.STRING
       },

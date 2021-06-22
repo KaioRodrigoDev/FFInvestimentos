@@ -1,14 +1,14 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import {View,Text,StyleSheet, ImageBackground,Image,KeyboardAvoidingView , TouchableOpacity,Alert} from 'react-native';
+import {View,Text,StyleSheet,ScrollView, ImageBackground,Image,KeyboardAvoidingView , TouchableOpacity,Alert} from 'react-native';
 import { Entypo, Feather, FontAwesome } from '@expo/vector-icons';
 import config from '../../../config/config.json'
 const bgimage = '../../assets/gold01.jpg';
 import ffinvest from '../../assets/ffimg.png'
 import Globais from '../../../Globais'
 import { useState } from 'react/cjs/react.development';
-
+import goldlink from '../../assets/goldlink.jpg'
 
 export default function Perfil({navigation}){
 

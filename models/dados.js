@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     dataFim: DataTypes.DATE,
     bonusM: DataTypes.INTEGER,
     bonusP: DataTypes.INTEGER,
+    bonusI: DataTypes.INTEGER,
     Email: DataTypes.STRING,
     num: DataTypes.INTEGER
   }, {
