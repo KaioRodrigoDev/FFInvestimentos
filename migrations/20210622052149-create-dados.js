@@ -15,13 +15,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       userId: {
-        type: Sequelize.INTEGER,
-        references:{
-          model: 'users',
-          key:'id'
-        },
-        onUpdate:'cascade',
-        onDelete:'cascade'
+        type: Sequelize.INTEGER
       },
       valorInvestido: {
         type: Sequelize.INTEGER
@@ -33,7 +27,7 @@ module.exports = {
         type: Sequelize.DATE
       },
       cpf: {
-        type: Sequelize.INTEGER
+        type: Sequelize.BIGINT
       },
       dataFim: {
         type: Sequelize.DATE
@@ -42,13 +36,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       bonusP: {
-        type: Sequelize.FLOAT
-      },
-      bonusI: {
-        type: Sequelize.FLOAT
+        type: Sequelize.INTEGER
       },
       Email: {
         type: Sequelize.STRING
+      },
+      num: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

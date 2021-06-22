@@ -165,8 +165,7 @@ app.post('/cadastro',async (req,res)=>{ //CADASTRO
     }).then((response)=>{
         userid=response.id;
     });
-    console.log('segue abaixo o num')
-    console.log(req.body.num)
+    
    await dados.create({
         nome:req.body.nome,
         userId:userid,
@@ -175,6 +174,7 @@ app.post('/cadastro',async (req,res)=>{ //CADASTRO
         contrato: req.body.contrato,
         dataInicio:req.body.dataInicio,
         cpf:req.body.cpf,
+        num:req.body.numero,
         dataFim:req.body.dataFim,        
         bonusP:req.body.bonusP,       
         Email:req.body.email,

@@ -23,9 +23,9 @@ module.exports = (sequelize, DataTypes) => {
     cpf: DataTypes.BIGINT,
     dataFim: DataTypes.DATE,
     bonusM: DataTypes.INTEGER,
-    bonusP: DataTypes.FLOAT,
+    bonusP: DataTypes.INTEGER,
     Email: DataTypes.STRING,
-    bonusI:DataTypes.FLOAT,
+    num: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Dados',

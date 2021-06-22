@@ -154,6 +154,7 @@ export default function Home({navigation}) {
         Globais.Email=(json.response2.Email)
         Globais.cpf=(json.response2.cpf)
         Globais.userId=(json.response.id)
+        Globais.num=(json.response2.num)
         const now = new Date(); // Data de hoje
         const past = new Date(Globais.dataFim); // Outra data no passado
         const diff = Math.abs(  past.getTime()- now.getTime()); // Subtrai uma data pela outra
