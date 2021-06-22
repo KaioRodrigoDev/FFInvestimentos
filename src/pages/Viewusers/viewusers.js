@@ -14,23 +14,37 @@ export default function Perfil({navigation}){
 
   async function sendForm(id){
       
-    
-      //Envio do formulário de login
-          let response=await fetch(`${config.urlRoot}deletacc`,{
-              method: 'POST',
-              headers: {
-                  Accept: 'application/json',
-                  'Content-Type': 'application/json'
+
+      
+          Alert.alert("Alerta!", "Deseja mesmo Deletar essa conta?", [
+              {
+                  text: "Não",
+                  onPress: () => null,
+                  style: "cancel"
               },
-              body: JSON.stringify({
-                  id: id,
-                  
-              })
-          });
-          let json=await response.json();
-          console.log(json)
-          Alert.alert("Feito!", "Conta EXCLUÍDA com sucesso!");
-          navigation.navigate('Sobre')
+              { text: "Sim", onPress: async () => {
+                let response= await fetch(`${config.urlRoot}deletacc`,{
+                  method: 'POST',
+                  headers: {
+                      Accept: 'application/json',
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                      id: id,
+                      
+                  })
+              });
+              let json= await response.json();
+              console.log(json)
+              Alert.alert("Feito!", "Conta EXCLUÍDA com sucesso!");
+              navigation.navigate('Sobre');
+                  }
+              }
+          ]);
+          return true;
+  
+      //Envio do formulário de login
+          
           
   
   
@@ -103,7 +117,9 @@ async function sendForm4(id){
           })
       });
       let json=await response.json();
+      Globais.detalhes=json
       console.log(json)
+      navigation.navigate('detalhes')
 }
 
 

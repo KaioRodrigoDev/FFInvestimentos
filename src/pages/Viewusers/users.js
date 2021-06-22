@@ -13,61 +13,21 @@ import goldlink from '../../assets/goldlink.jpg'
 export default function Perfil({navigation}){
 
   var valor = 'Cliente'
-    if (Globais.nome === 'Felipe'){
-      valor = 'CEO'
-    }
-
+  function formatDate(str)
+  {
+      return str.split('-').reverse().join('-');
+  }
     function login(){
       navigation.navigate('Login')
     }
+
+
     return(
       <ImageBackground
       source={require(bgimage)}
       style={styles.bgimage}
       >
-        <ScrollView 
-      showsVerticalScrollIndicator={false}
-      >
-      <View style={styles.hellowView}>
-        <Text style={styles.hello}>Olá, {Globais.nick}</Text>
-        
-        <Text style={styles.hello}>Que bom te receber de volta!  ; )</Text>
-      </View>
-
-      <Text style={{color:'#ffd730',marginTop:'7%',textAlign:'center',fontSize:20,fontFamily: 'monte-serrat'}}>CONTA PRINCIPAL</Text>
-      <View style={styles.investimento} >
-        
-        <Text style={{color:'#ffd730',bottom:5,fontSize:15,textAlign:'center',fontFamily: 'monte-serrat2'}}>MEU INVESTIMENTO</Text>  
-          <View style={{
-            backgroundColor:'#12121299',
-              flexDirection:'row',
-              justifyContent:'center',
-              marginTop:10,
-              borderRadius:10,
-              borderColor:'#F19E04',
-              bottom:'2%'}}>
-              
-            <Text style={{color:'#FFF',top:7,textAlign:'center',}}>R$</Text>
-            <Text style={{color:'#ffd730',fontSize:23,padding:5,fontFamily: 'monte-serrat2'}}> {Globais.maskedvalorInvestido}</Text>
-          </View>
-
-         <Text style={{color:'#FFF',bottom:5,fontSize:13,textAlign:'center',paddingTop:10,fontFamily: 'monte-serrat2'}}>RENDIMENTO MENSAL</Text>
-         <View style={styles.invest}>
-            <Text style={{color:'#FFF',top:7,textAlign:'center'}}>R$</Text>
-           <Text style={{color:'#FFF',fontSize:23,padding:5,fontFamily: 'monte-serrat2'}}> {Globais.maskedbonusM} </Text>
-         </View>
-
-
-
-            <Text style={{color:'#FFF',fontSize:13,padding:5,textAlign:'center',fontFamily: 'monte-serrat2'}}> MINHA REDE </Text>
-         <View style={styles.invest}>
-            
-            <Text style={{color:'#FFF',fontSize:23,padding:5,fontFamily: 'monte-serrat2'}}> {Globais.bonusI} </Text>
-            <Text style={{color:'#FFF',top:7}}>Pessoa(s)</Text>
-
-         </View>
-
-            <View style={{flexDirection:'row',backgroundColor:'#121212'}}>
+          <View style={{flexDirection:'row',backgroundColor:'#121212'}}>
 
           <Image
           source={ffinvest}
@@ -83,55 +43,108 @@ export default function Perfil({navigation}){
             position:'absolute',}}
             size={26}
             color={'#FFF'}
-            onPress={()=>navigation.navigate('Sobre')}
+            onPress={()=>navigation.navigate('users')}
           />
           
           
             
           </View>
+
+
+        
+        
+          <ScrollView 
+      showsVerticalScrollIndicator={false}
+      >
+
         <View style={styles.title}>
-          <Text style={styles.profille}> PERFIL </Text>
+          <Text style={styles.profille}> DADOS DO CLIENTE </Text>
           <View style={styles.profilleIcon}>
             <FontAwesome color='#E1E7E4' name='user-circle' size={70} />
-            <Text style={{fontSize:25,color:'#E1E7E4',fontFamily: 'monte-serrat3'}}> {Globais.nome} </Text>
+            <Text style={{fontSize:25,color:'#E1E7E4',fontFamily: 'monte-serrat3'}}> {Globais.detalhes.nome} </Text>
             <Text style={{fontSize:15,color:'#E1E7E4',fontFamily: 'monte-serrat3'}}>{valor}</Text>
           </View>
-        
-          
-          <View style={{alignItems:'center',flex:1}}>
-            <Text style={{color:'#E1E7E4',textAlign:'center',justifyContent:'center',fontFamily: 'monte-serrat'}}> {Globais.Email} </Text>
-            
 
+
+
+        <View style={styles.inf}>
+          
             
+          <View style={styles.infoBonus}>
+            <Text style={{color:'#048BF1',fontSize:13,fontFamily: 'monte-serrat3'}}>Cliente: </Text>
+            <Text style={{color:'#FFF',fontSize:13,left:'100%',fontFamily: 'monte-serrat2'}}>{Globais.detalhes.nome}</Text>
           </View>
-          
-          
+
+          <View style={styles.infoBonus}>
+            <Text style={{color:'#048BF1',fontSize:13,fontFamily: 'monte-serrat3'}}>CPF: </Text>
+            <Text style={{color:'#FFF',fontSize:13,left:'100%',fontFamily: 'monte-serrat2'}}>{Globais.detalhes.cpf}</Text>
+          </View>
+
+          <View style={styles.infoBonus}>
+            <Text style={{color:'#048BF1',fontSize:13,fontFamily: 'monte-serrat3'}}>Email: </Text>
+            <Text style={{color:'#FFF',fontSize:13,left:'100%',fontFamily: 'monte-serrat2'}}>{Globais.detalhes.Email}</Text>
+          </View>
+
+          <View style={styles.infoBonus}>
+            <Text style={{color:'#048BF1',fontSize:13,fontFamily: 'monte-serrat3'}}>Whatsapp: </Text>
+            <Text style={{color:'#FFF',fontSize:13,left:'100%',fontFamily: 'monte-serrat2'}}>{Globais.detalhes.num}</Text>
+          </View>
+
+          <View style={styles.infoBonus}>
+            <Text style={{color:'#048BF1',fontSize:13,fontFamily: 'monte-serrat3'}}>Ativo: </Text>
+            <Text style={{color:'#FFF',fontSize:13,left:'100%',fontFamily: 'monte-serrat2'}}>{Globais.detalhes.ativo}</Text>
+          </View>
+
+          <View style={styles.infoBonus}> 
+            <Text style={{color:'#048BF1',fontSize:13,fontFamily: 'monte-serrat3'}}>Ganho (em %): </Text>
+            <Text style={{color:'#FFF',fontSize:13,left:'100%',fontFamily: 'monte-serrat2'}}>{Globais.detalhes.bonusP}% ao mês</Text>
+          </View>
+
+          <View style={styles.infoBonus}>
+            <Text style={{color:'#048BF1',fontSize:13,fontFamily: 'monte-serrat3'}}>Valor investido: </Text>
+            <Text style={{color:'#FFF',fontSize:13,left:'100%',fontFamily: 'monte-serrat2'}}>R$ {Globais.detalhes.valorInvestido}</Text>
+          </View>
+
+          <View style={styles.infoBonus}>
+            <Text style={{color:'#048BF1',fontSize:13,fontFamily: 'monte-serrat3'}}>Bônus mensal: </Text>
+            <Text style={{color:'#FFF',fontSize:13 ,left:'100%',fontFamily: 'monte-serrat2'}}>R$ {Globais.detalhes.bonusM}</Text>
+          </View>
+
+          <View style={styles.infoBonus}>
+            <Text style={{color:'#048BF1',fontSize:13,fontFamily: 'monte-serrat3'}}>Indicações: </Text>
+            <Text style={{color:'#FFF',fontSize:13 ,left:'100%',fontFamily: 'monte-serrat2'}}>{Globais.detalhes.bonusI}</Text>
+          </View>
+
+          <View style={styles.infoBonus}>
+            <Text style={{color:'#048BF1',fontSize:13,fontFamily: 'monte-serrat3'}}>Contrato: </Text>
+            <Text style={{color:'#FFF',fontSize:13,left:'100%',fontFamily: 'monte-serrat2'}}>{Globais.detalhes.contrato} Meses</Text>
+          </View>
+
+          <View style={styles.infoBonus}>
+            <Text style={{color:'#048BF1',fontSize:13,fontFamily: 'monte-serrat3'}}>Data início: </Text>
+            <Text style={{color:'#FFF',fontSize:13,left:'100%',fontFamily: 'monte-serrat2'}}>{formatDate(Globais.detalhes.dataInicio)}</Text>
+          </View>
+
+          <View style={styles.infoBonus}>
+            <Text style={{color:'#048BF1',fontSize:13,fontFamily: 'monte-serrat3'}}>Data fim: </Text>
+            <Text style={{color:'#FFF',fontSize:13,left:'100%',fontFamily: 'monte-serrat2'}}>{formatDate(Globais.detalhes.dataFim)}</Text>
+          </View>
+      
         </View>
 
-         <View style={styles.goldView}>
-           <Text style={{color:'#FFF',fontSize:15,fontFamily: 'monte-serrat2'}}> Acompanhe o Mercado em Ouro </Text>
-           <TouchableOpacity
-           onPress={()=>ourin()}
-           >
-           <Image
-           source={goldlink}
-           style={styles.goldimg}
-            />
 
-            </TouchableOpacity>
-           <TouchableOpacity
-           onPress={()=>ourin()} 
-           >
-            <Text style={{color:'#FFF', textAlign:'center',justifyContent:'center'}}>XAUUSD - Gráfico e Preço do Ouro</Text>
-            <Text style={{color:'#FFF', textAlign:'center',justifyContent:'center'}}>TradingView</Text>
-            
-            </TouchableOpacity>
-           
-         </View>
-         
+
+
       </View>
+
+
+
+      
+
+
+         
+         
       </ScrollView>
-        
         <StatusBar style="light" />
       </ImageBackground>
     )
@@ -155,27 +168,46 @@ const styles = StyleSheet.create({
     flex:1,
     resizeMode:'cover',
     width:'100%',
-    height:'100%'
+    height:'100%',
+    
   },
     title:{
       flex:1,
-      padding:32,
       backgroundColor: '#12121290',
     },
     profille:{
       fontSize:20,
       textAlign:'center',
       padding:5,
+      paddingTop:20,
       alignItems:'center',
       justifyContent:'center',
       color:'#E1E7E4',
       fontFamily: 'monte-serrat3'
     },
     profilleIcon:{
-      padding:45,
+      padding:20,
       textAlign:'center',
       alignItems:'center',
       justifyContent:'center',
+    },
+    inf:{
+      height:'50%',
+      borderRadius:25,
+      margin:10,
+      marginTop:'15%',
+      justifyContent:'center',
+    },
+    infoBonus:{
+      alignItems:'center',
+      backgroundColor:'#12121290',
+      flex:1,
+      flexDirection:'row',
+      borderWidth:0.3,
+      borderColor:'#048BF1',
+      borderRadius:25,
+      padding:15,
+      paddingLeft:20,
     }
   
   

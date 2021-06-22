@@ -18,6 +18,7 @@ class Globais{
     static bonusI=''
     static dados=''
     static num=''
+    static detalhes=''
 }
 
 
