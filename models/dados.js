@@ -26,7 +26,6 @@ module.exports = (sequelize, DataTypes) => {
     bonusP: DataTypes.FLOAT,
     Email: DataTypes.STRING,
     bonusI:DataTypes.FLOAT,
-    num: DataTypes.BIGINT,
   }, {
     sequelize,
     modelName: 'Dados',

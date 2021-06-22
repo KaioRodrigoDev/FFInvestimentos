@@ -35,9 +35,6 @@ module.exports = {
       cpf: {
         type: Sequelize.INTEGER
       },
-      num: {
-        type: Sequelize.INTEGER
-      },
       dataFim: {
         type: Sequelize.DATE
       },
