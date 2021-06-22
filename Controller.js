@@ -19,6 +19,16 @@ app.get('/read', async (req,res)=>{ //VER TODOS
     console.log(response)
 });
 
+
+app.post('/detalhes', async (req,res)=>{ //VER TODOS
+    let response=await user.findOne({
+        where:{id:req.body.id},
+    });
+    res.send(JSON.stringify(response));
+    console.log(response)
+});
+
+
 app.post('/login',async (req,res)=>{ //FAZER LOGIN
     console.log('json')
     let response=await user.findOne({

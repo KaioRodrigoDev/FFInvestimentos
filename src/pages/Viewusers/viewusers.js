@@ -83,12 +83,31 @@ async function sendForm3(id){
       console.log(json)
       Alert.alert("Feito!", "Removido bônus com sucesso");
       navigation.navigate('Sobre')
-      
-
-
-
 
 }
+
+
+async function sendForm4(id){
+      
+    
+  //Envio do formulário de login
+      let response=await fetch(`${config.urlRoot}detalhes`,{
+          method: 'POST',
+          headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              id: id,
+              
+          })
+      });
+      let json=await response.json();
+      console.log(json)
+}
+
+
+
     async function cadastro(){
       
     navigation.navigate('cadastro')
@@ -115,6 +134,18 @@ async function sendForm3(id){
           </View>
           
           <View style={{justifyContent:'center',flexDirection:'row'}}>
+
+
+          <TouchableOpacity 
+          onPress={()=> sendForm4(id)}
+          style={{justifyContent:'center',paddingRight:10}}>
+              <Feather
+              name={'info'}
+              size={30}
+              color={'#FFF'}
+              />
+          </TouchableOpacity>
+
           <TouchableOpacity 
           onPress={()=> sendForm3(id)}
           style={{justifyContent:'center',paddingRight:10}}>

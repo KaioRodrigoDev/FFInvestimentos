@@ -18,6 +18,7 @@ import trocasenha from './src/pages/TrocaSenha/trocasenha'
 import Cadastro from './src/pages/Cadastro/cadastro';
 import selectpage from './src/pages/Seletpage/seletpage.js'
 import users from './src/pages/Viewusers/viewusers.js'
+import detalhes from './src/pages/Viewusers/users.js'
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -138,6 +139,13 @@ export default function App() {
       name="users" 
       options={{headerShown: false}} 
       component = {users} 
+      
+      />
+
+      <Stack.Screen 
+      name="detalhes" 
+      options={{headerShown: false}} 
+      component = {detalhes} 
       
       />
 
