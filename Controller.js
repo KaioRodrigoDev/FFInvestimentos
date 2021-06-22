@@ -21,11 +21,10 @@ app.get('/read', async (req,res)=>{ //VER TODOS
 
 
 app.post('/detalhes', async (req,res)=>{ //VER TODOS
-    let response=await user.findOne({
-        where:{id:req.body.id},
+    let response=await dados.findOne({
+        where:{userId:req.body.id},
     });
     res.send(JSON.stringify(response));
-    console.log(response)
 });
 
 
