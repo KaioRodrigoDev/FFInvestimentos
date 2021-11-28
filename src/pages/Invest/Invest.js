@@ -6,8 +6,8 @@ import TaskList from '../../components/index'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import Globais from '../../../Globais'
 import { TextInputMask } from 'react-native-masked-text'
-const bgimage = '../../assets/gold01.jpg';
-import ffinvest from '../../assets/ffimg.png'
+const bgimage = '../../assets/imgs/gold01.jpg';
+import ffinvest from '../../assets/imgs/ffimg.png'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Entypo, Feather } from '@expo/vector-icons';
 
@@ -125,8 +125,7 @@ const styles = StyleSheet.create({
     ffimg:{
       marginLeft:10,
       maxWidth:'8%',
-      maxHeight:'8%',
-      
+      maxHeight:'8%',     
       marginTop:'8.5%',
       marginBottom:7,
       backgroundColor:'#121212',

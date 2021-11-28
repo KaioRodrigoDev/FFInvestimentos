@@ -20,7 +20,7 @@ app.get('/read', async (req,res)=>{ //VER TODOS
 });
 
 
-app.post('/detalhes', async (req,res)=>{ //VER TODOS
+app.post('/detalhes', async (req,res)=>{ //VER DETALHES
     let response=await dados.findOne({
         where:{userId:req.body.id},
     });

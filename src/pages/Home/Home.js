@@ -3,8 +3,9 @@ import { StatusBar } from 'expo-status-bar';
 import React, {useState, useEffect, Component} from 'react';
 import { StyleSheet, Text, View,KeyboardAvoidingView,ImageBackground,TextInput,
    TouchableOpacity, Animated, AsyncStorage, Keyboard,Linking, BackHandler,Alert , time } from 'react-native';
+import styles from '../../assets/layouts/styles';
 import * as Animatable from 'react-native-animatable'
-const bgimage = '../../assets/gold.png';
+const bgimage = '../../assets/img/gold.png';
 import config from '../../../config/config.json'
 const acc = false
 import Globais from '../../../Globais'
@@ -198,7 +199,7 @@ export default function Home({navigation}) {
           width: logo.x ,
           height:logo.y,
         }}
-        source={require('../../assets/Prancheta6.png')}
+        source={require('../../assets/img/Prancheta6.png')}
         />
       </View>
       
@@ -289,63 +290,3 @@ export default function Home({navigation}) {
     
   );
 }
-
-const styles = StyleSheet.create({
-  background: {
-    flex:1,
-    backgroundColor:'#12121250',
-    alignItems:'center',
-    justifyContent:'center'
-  },
-  containerLogo:{
-    height:'38%',
-    justifyContent:'center',
-
-  },
-  container:{
-    flex:1.1,
-    alignItems:'center',
-    width:'90%',
-    paddingBottom:50,
-
-  },
-  input:{
-    backgroundColor:'#FFF',
-    width:'90%',
-    marginBottom:15,
-    color:'#222',
-    fontSize:17,
-    borderRadius:7,
-    padding:10,
-
-  },
-  btnSubmit:{
-    backgroundColor:'#35AAFF',
-    width:'90%',
-    height:45,
-    alignItems:'center',
-    justifyContent:'center',
-    borderRadius:7
-
-  },
-  SubmitText:{
-    color:"#FFF",
-    fontSize:18
-
-  },
-  btnRegister:{
-    marginTop:10,
-
-
-  },
-  registerText:{
-    color:"#FFF"
-  },
-  bgimage:{
-    flex:1,
-    resizeMode:'cover',
-    width:'100%',
-    height:'100%'
-  }
-
-});

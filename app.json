@@ -4,9 +4,9 @@
     "slug": "FFinvest",
     "version": "1.2.1",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/imgs/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/imgs/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#202A44"
     },
@@ -23,14 +23,14 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/imgs/adaptive-icon.png",
         "backgroundColor": "#202A44"
       },
-      "package": "com.AssetClub.FFi",
-      "versionCode": 1
+      "package": "com.AssetClub.FFinvestimentos",
+      "versionCode": 2
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/imgs/favicon.png"
     },
     "description": ""
   }
