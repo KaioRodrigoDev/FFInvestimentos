@@ -37,7 +37,8 @@
     "react-native-web": "^0.16.3",
     "remask": "0.1.0-alpha.5",
     "sequelize": "^6.6.2",
-    "vanilla-masker": "^1.2.0"
+    "vanilla-masker": "^1.2.0",
+    "yarn": "^1.22.17"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
